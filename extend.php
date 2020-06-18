@@ -28,6 +28,8 @@ return [
         }).removeClass('External-link');
 
       $('.External-link').attr("target","_blank");
+
+    }
       
     context.custommExtLastContentHtml = context.contentHtml;
   });
