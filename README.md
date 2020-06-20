@@ -1,4 +1,4 @@
-# elint
+# elint 🔗
 A minimal no non-sense flarum extension which opens only external links in a new tab. Internal links are left alone. Why is it called "elint?" External Links In New Tab.
 
 
