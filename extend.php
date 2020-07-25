@@ -27,8 +27,8 @@ return [
         return this.hostname && this.hostname !== location.hostname; 
         }).removeClass('External-link');
 
-      var rel = $('.External-link').attr('rel');
-      $('.External-link').attr('target','_blank').attr('rel',rel + ' noopener');
+      var rel = this.$('.External-link').attr('rel');
+      this.$('.External-link').attr('target','_blank').attr('rel',rel + ' noopener');
 
     }
       
