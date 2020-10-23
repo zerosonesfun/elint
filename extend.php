@@ -16,8 +16,7 @@ return [
         ->content(function (Document $document) {
  $document->foot[] = <<<HTML
 <script>
-  flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'config', function(output, isInitialized, context) {
-    if (context.custommExtLastContentHtml !== context.contentHtml) {
+  flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function(output, vnode) {
 
       $('a').filter(function() {
         return this.hostname && this.hostname !== location.hostname; 
@@ -30,9 +29,6 @@ return [
       var rel = this.$('.External-link').attr('rel');
       this.$('.External-link').attr('target','_blank').attr('rel',rel + ' noopener');
 
-    }
-      
-    context.custommExtLastContentHtml = context.contentHtml;
   });
 </script>
 HTML;
