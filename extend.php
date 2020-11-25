@@ -18,16 +18,14 @@ return [
 <script>
   flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function(output, vnode) {
 
-      $('a').filter(function() {
-        return this.hostname && this.hostname !== location.hostname; 
-        }).addClass('External-link');
-
-      $('a[href$=".mp3"], a[href$=".ogg"], a[href$=".wav"], a[href$=".mp4"], a[href$=".m4a"], a[href$=".acc"], a[href$=".opus"], a[href$=".flac"]').filter(function() {
-        return this.hostname && this.hostname !== location.hostname; 
-        }).removeClass('External-link');
-
-      var rel = this.$('.External-link').attr('rel');
-      this.$('.External-link').attr('target','_blank').attr('rel',rel + ' noopener');
+    var links = document.links;
+      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+       if (links[i].hostname != window.location.hostname) {
+       links[i].target = '_blank';
+       links[i].rel = 'noopener nofollow ugc';
+       links[i].classList.add("external-link");
+      } 
+    }
 
   });
 </script>
