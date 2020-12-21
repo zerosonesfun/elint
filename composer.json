@@ -33,7 +33,7 @@
     "extra": {
         "flarum-extension": {
             "title": "External Links in New Tab (ELINT)",
-            "category": "features",
+            "category": "feature",
             "icon": {
                 "name": "fas fa-external-link-square-alt",
                 "backgroundColor": "#ddd",
