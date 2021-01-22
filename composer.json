@@ -2,7 +2,7 @@
     "name": "zerosonesfun/elint",
     "description": "Opens external links, and only external links, in a new tab.",
     "type": "flarum-extension",
-    "keywords": ["discussion, external, links"],
+    "keywords": ["discussion", "external", "links"],
     "license": "MIT",
     "authors": [
         {
