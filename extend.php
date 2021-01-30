@@ -39,8 +39,9 @@ flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].pr
                 links[i].rel = 'noopener nofollow ugc';
                 links[i].classList.add('external-link');
              }
-        }  
-
+          }  
+       }
+    }  
   });
 </script>
 HTML;
