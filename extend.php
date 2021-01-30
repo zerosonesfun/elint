@@ -37,7 +37,7 @@ flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].pr
             if (links[i].hostname != window.location.hostname) {
                 links[i].target = '_blank';
                 links[i].rel = 'noopener nofollow ugc';
-                links[i].classList.add("external-link");
+                links[i].classList.add('external-link');
              }
         }  
 
