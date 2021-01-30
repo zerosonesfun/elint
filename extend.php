@@ -16,16 +16,25 @@ return [
         ->content(function (Document $document) {
  $document->foot[] = <<<HTML
 <script>
-  flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function(output, vnode) {
+flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function(output, vnode) {
 
-    var links = document.links;
-      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-       if (links[i].hostname != window.location.hostname) {
-       links[i].target = '_blank';
-       links[i].rel = 'noopener nofollow ugc';
-       links[i].classList.add("external-link");
-      } 
-    }
+    var all_links = document.querySelectorAll('a');
+    
+    var excludes = ['domain0.com','www.domain1.com','domain2.com']; // Optionally exclude domains here
+    
+    for (var i = 0; i < all_links.length; i++){
+        var a = all_links[i];
+        var found = false; 
+        for(j=0; j<excludes.length; j++) {
+                if(a.href.includes(excludes[j])) {
+                    found = true;
+                    break;  
+                }
+        }    
+        if (!found) {
+            a.rel = 'noopener nofollow ugc'; a.target = '_blank'; a.classList.add('external-link');
+        }
+    }  
 
   });
 </script>
