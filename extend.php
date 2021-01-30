@@ -32,16 +32,13 @@ flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].pr
                 }
         }    
         if (!found) {
-            var links = document.links;
-            for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-            if (links[i].hostname != window.location.hostname) {
-                links[i].target = '_blank';
-                links[i].rel = 'noopener nofollow ugc';
-                links[i].classList.add('external-link');
+                if (all_links[i].hostname != window.location.hostname) {
+                all_links[i].target = '_blank';
+                all_links[i].rel = 'noopener nofollow ugc';
+                all_links[i].classList.add('external-link');
              }
           }  
-       }
-    }  
+       } 
   });
 </script>
 HTML;
